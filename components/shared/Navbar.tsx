@@ -4,17 +4,26 @@ import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <nav className="border-b">
-      <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between">
-        <h1 className="font-bold text-xl">MailBox</h1>
-
-        <div className="flex gap-6">
-          <Link href="/">Home</Link>
-          <Link href="/pricing">Pricing</Link>
-          <Link href="/contact">Contact</Link>
-          <Link href="/login">Login</Link>
-        </div>
+    <div className="navbar bg-base-100 border-b border-base-300 px-6">
+      <div className="flex-1">
+        <Link href="/" className="text-2xl font-bold">
+           Public Website 
+        </Link>
       </div>
-    </nav>
+
+      <div className="flex gap-2">
+        <Link href="/pricing" className="btn btn-ghost">
+          Pricing
+        </Link>
+
+        <Link href="/contact" className="btn btn-ghost">
+          Contact
+        </Link>
+
+        <Link href="/login" className="btn btn-primary">
+          Login
+        </Link>
+      </div>
+    </div>
   );
 }

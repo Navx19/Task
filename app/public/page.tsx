@@ -1,4 +1,3 @@
-// Importing from public/page.tsx component
 export default function Home() {
   return (
     <main>
