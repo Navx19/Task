@@ -12,11 +12,11 @@ export default function Navbar() {
       </div>
 
       <div className="flex gap-2">
-        <Link href="/public/pricing" className="btn btn-ghost">
+        <Link href="/pricing" className="btn btn-ghost">
           Pricing
         </Link>
 
-        <Link href="/public/contact" className="btn btn-ghost">
+        <Link href="/contact" className="btn btn-ghost">
           Contact
         </Link>
 
