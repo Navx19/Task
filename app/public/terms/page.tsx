@@ -1,3 +1,35 @@
 export default function TermsPage() {
-  return <h1 className="text-4xl font-bold p-8">Terms</h1>;
+  return (
+    <div className="max-w-4xl mx-auto px-6 py-20">
+      <h1 className="text-5xl font-bold mb-10">Terms & Conditions</h1>
+
+      <div className="space-y-6 leading-8">
+        <p>These terms are some general guidelines for using our service.</p>
+
+        <p>
+          1.Users are responsible for maintaining account security and lawful
+          use of the service.
+        </p>
+
+        <p>
+          2.Subscription plans may change over time based on platform updates.
+        </p>
+
+        <p>
+          3.We reserve the right to modify or discontinue the service at any
+          time.
+        </p>
+
+        <p>
+          4.Users must comply with all applicable laws and regulations when
+          using the service.
+        </p>
+
+        <p>
+          5.We are not liable for any damages resulting from the use of our
+          service.
+        </p>
+      </div>
+    </div>
+  );
 }
