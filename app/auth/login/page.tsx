@@ -18,8 +18,8 @@ export default function LoginPage() {
           />
 
           <a
-            href="/forgot-password"
-            className="text-sm text-primary hover:underline"
+            href="/auth/forgot-password"
+            className="text-sm text-primary hover:underline "
           >
             Forgot your password?
           </a>

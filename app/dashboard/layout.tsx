@@ -3,16 +3,16 @@ import Link from "next/link";
 export default function DashboardLayout({
   children,
 }: {
-  children: React.ReactNode; //react.node is used karon jekono children element access kore
+  children: React.ReactNode;
 }) {
   return (
-    <div className="drawer lg:drawer-open"> //sidebar er jonno drawer use kora hoyeche
+    <div className="drawer lg:drawer-open">
       <input id="dashboard-drawer" type="checkbox" className="drawer-toggle" />
 
       {/* Main Content */}
       <div className="drawer-content bg-base-200 min-h-screen">
         {/* Mobile Navbar */}
-        <div className="navbar bg-base-100 border-b border-base-300 lg:hidden"> 
+        <div className="navbar bg-base-100 border-b border-base-300 lg:hidden">
           <div className="flex-none">
             <label
               htmlFor="dashboard-drawer"
@@ -35,7 +35,7 @@ export default function DashboardLayout({
         <label htmlFor="dashboard-drawer" className="drawer-overlay"></label>
 
         <aside className="w-72 min-h-full bg-base-100 border-r border-base-300 p-6">
-          <h1 className="text-3xl font-bold mb-10">Public website</h1>
+          <h1 className="text-3xl font-bold mb-10">MailBox</h1>
 
           <ul className="menu space-y-2">
             <li>
