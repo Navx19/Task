@@ -1,6 +1,8 @@
-import { pricingPlans } from "@/data/pricing";
+import { getPricingPlans } from "@/lib/api";
 
-export default function PricingPage() {
+export default async function PricingPage() {
+  const pricingPlans = await getPricingPlans();
+
   return (
     <div className="p-20 px-6">
         <h1 className="text-4xl font-bold mb-10 text-center">

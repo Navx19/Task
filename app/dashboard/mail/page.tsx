@@ -1,6 +1,8 @@
-import { mails } from "@/data/mails";
+import { getMails } from "@/lib/api";
 
-export default function MailPage() {
+export default async function MailPage() {
+  const mails = await getMails();
+
   return (
     <div className="space-y-6">
       {/* Header */}
@@ -75,6 +77,13 @@ export default function MailPage() {
                 </p>
               </div>
             </div>
+          </div>
+
+          {/* Placeholder File */}
+          <div className="pt-4">
+            <a href="/sample-mail.pdf" className="btn btn-outline">
+              View Mail
+            </a>
           </div>
         </div>
       </div>
