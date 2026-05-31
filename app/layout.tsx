@@ -1,5 +1,6 @@
 import "./globals.css";
-import AppShell from "@/components/shared/AppShell";
+import Navbar from "@/components/shared/Navbar";
+import Footer from "@/components/shared/Footer";
 
 export default function RootLayout({
   children,
@@ -9,7 +10,9 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="business">
       <body>
-        <AppShell>{children}</AppShell>
+        <Navbar />
+        {children}
+        <Footer />
       </body>
     </html>
   );

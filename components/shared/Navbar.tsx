@@ -24,7 +24,7 @@ export default function Navbar() {
           Dashboard
         </Link>
 
-        <Link href="/auth/login" className="btn btn-primary">
+        <Link href="/login" className="btn btn-primary">
           Login
         </Link>
       </div>

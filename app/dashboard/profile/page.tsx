@@ -2,7 +2,6 @@ import { getCurrentUser } from "@/lib/api";
 
 export default async function ProfilePage() {
   const user = await getCurrentUser();
-  const initial = user.name[0]?.toUpperCase() ?? "U";
 
   return (
     <div className="space-y-6">
@@ -19,7 +18,7 @@ export default async function ProfilePage() {
           <div className="flex flex-col items-center">
             <div className="avatar placeholder">
               <div className="bg-primary text-primary-content rounded-full w-24 flex items-center justify-center">
-                <span className="text-3xl">{initial}</span>
+                NN
               </div>
             </div>
 

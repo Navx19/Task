@@ -3,8 +3,7 @@ import { pricingPlans } from "@/data/pricing";
 import { currentUser } from "@/data/user";
 
 // Simulate API delay
-const delay = (ms: number) =>
-     new Promise((resolve) => setTimeout(resolve, ms));
+const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 // Get all mails
 export async function getMails() {
@@ -21,4 +20,20 @@ export async function getPricingPlans() {
 export async function getCurrentUser() {
   await delay(1000);
   return currentUser;
+}
+
+export async function loginUser(email: string, password: string) {
+  await delay(1000);
+
+  if (email === currentUser.email && password === currentUser.password) {
+    return {
+      success: true,
+      user: currentUser,
+    };
+  }
+
+  return {
+    success: false,
+    message: "Invalid email or password.",
+  };
 }

@@ -26,7 +26,7 @@ export default function SignupPage() {
             />
             <button className="btn btn-primary w-full">Create Account</button>
 
-            <a href="/auth/login" className="text-sm text-primary  hover:underline">
+            <a href="/login" className="text-sm text-primary  hover:underline">
               Already have an account? Login
             </a>
           </div>
