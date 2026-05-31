@@ -49,7 +49,7 @@ export default function LoginPage() {
             required
           />
 
-          {error && <p className="text-sm text-error">{error}</p>} //error thakle dekhabe
+          {error && <p className="text-sm text-error">{error}</p>} 
 
           <div className="flex items-center justify-between mt-4">
             <label className="label cursor-pointer gap-2">
