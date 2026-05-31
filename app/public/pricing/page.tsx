@@ -24,8 +24,10 @@ export default async function PricingPage() {
                             {plan.price}
                         </p>
                         
-                        <ul className="space-y-2"> {plan.features.map((feature) => (
-                            <li key = {feature}>++++{feature}</li>))}
+                        <ul className="list-disc list-inside space-y-2">
+                          {plan.features.map((feature) => (
+                            <li key={feature}>{feature}</li>
+                          ))}
                         </ul>
 
                         <button className="btn btn-primary mt-4">

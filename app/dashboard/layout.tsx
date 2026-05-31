@@ -1,12 +1,20 @@
 import Link from "next/link";
+import { getCurrentUser } from "@/lib/api";
 
-export default function DashboardLayout({
+export default async function DashboardLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const user = await getCurrentUser();
+  const initials = user.name
+    .split(" ")
+    .map((part) => part[0])
+    .join("")
+    .slice(0, 2)
+    .toUpperCase();
+
   return (
-    <html lang="en" data-theme="business">
     <div className="drawer lg:drawer-open">
       <input id="dashboard-drawer" type="checkbox" className="drawer-toggle" />
 
@@ -19,7 +27,7 @@ export default function DashboardLayout({
               htmlFor="dashboard-drawer"
               className="btn btn-square btn-ghost"
             >
-              ☰
+              &#9776;
             </label>
           </div>
 
@@ -45,16 +53,16 @@ export default function DashboardLayout({
           <div className="p-6">
             <div className="flex items-center gap-3">
               <div className="avatar placeholder">
-                <div className="bg-primary text-primary-content rounded-full w-12">
-                  <span>NF</span>
+                <div className="bg-primary text-primary-content rounded-full flex items-center justify-center w-12">
+                  <span>{initials}</span>
                 </div>
               </div>
 
               <div>
-                <h3 className="font-semibold">Naiyer Nur Fairoz</h3>
+                <h3 className="font-semibold">{user.name}</h3>
 
                 <div className="badge badge-primary badge-sm mt-1">
-                  Pro Plan
+                  {user.plan} Plan
                 </div>
               </div>
             </div>
@@ -96,6 +104,5 @@ export default function DashboardLayout({
         </aside>
       </div>
     </div>
-    </html>
   );
 }

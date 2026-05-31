@@ -1,6 +1,6 @@
 export const currentUser = {
   id: 1,
-  name: "John Doe",
-  email: "john@example.com",
-  plan: "Advanced"
+  name: "Nava Nur",
+  email: "nava@example.com",
+  plan: "Pro",
 };

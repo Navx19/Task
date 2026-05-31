@@ -17,14 +17,29 @@ export default function LoginPage() {
             className="input input-bordered w-full"
           />
 
+          <div className="flex items-center justify-between mt-4">
+            <label className="label cursor-pointer">
+              <input type="checkbox" className="checkbox" />
+              <span className="label-text">Remember me</span>
+            </label>
+          
+
           <a
             href="/auth/forgot-password"
             className="text-sm text-primary hover:underline "
           >
             Forgot your password?
           </a>
+          </div>
 
           <button className="btn btn-primary w-full">Login</button>
+
+          <a
+            href="/auth/signup"
+            className="text-sm text-primary  hover:underline"
+          >
+            Don&apos;t have an account? Sign up
+          </a>
         </div>
       </div>
     </div>

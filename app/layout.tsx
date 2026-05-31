@@ -1,6 +1,5 @@
 import "./globals.css";
-import Navbar from "@/components/shared/Navbar";
-import Footer from "@/components/shared/Footer";
+import AppShell from "@/components/shared/AppShell";
 
 export default function RootLayout({
   children,
@@ -8,11 +7,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" data-theme="business"> 
+    <html lang="en" data-theme="business">
       <body>
-        <Navbar />
-        {children}
-        <Footer />
+        <AppShell>{children}</AppShell>
       </body>
     </html>
   );

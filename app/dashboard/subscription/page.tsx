@@ -1,4 +1,11 @@
-export default function SubscriptionPage() {
+import { getCurrentUser, getPricingPlans } from "@/lib/api";
+
+export default async function SubscriptionPage() {
+  const [pricingPlans, user] = await Promise.all([
+    getPricingPlans(),
+    getCurrentUser(),
+  ]);
+
   return (
     <div className="space-y-6">
       <div>
@@ -8,57 +15,44 @@ export default function SubscriptionPage() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {/* Basic */}
-        <div className="card bg-base-100 shadow-md border border-base-300">
-          <div className="card-body">
-            <h2 className="card-title">Basic</h2>
+        {pricingPlans.map((plan) => {
+          const isCurrentPlan = plan.name === user.plan;
 
-            <p className="text-4xl font-bold">$10</p>
+          return (
+            <div
+              key={plan.name}
+              className={`card bg-base-100 shadow-md border ${
+                isCurrentPlan ? "border-primary" : "border-base-300"
+              }`}
+            >
+              <div className="card-body">
+                <div className="flex justify-between items-center">
+                  <h2 className="card-title">{plan.name}</h2>
 
-            <ul className="space-y-2 mt-4">
-              <li> 10 mails</li>
-              <li> Basic support</li>
-            </ul>
+                  {isCurrentPlan && (
+                    <span className="badge badge-primary">Current</span>
+                  )}
+                </div>
 
-            <button className="btn btn-outline mt-6">Choose Plan</button>
-          </div>
-        </div>
+                <p className="text-4xl font-bold">{plan.price}</p>
 
-        {/* Advanced */}
-        <div className="card bg-base-100 shadow-md border border-primary">
-          <div className="card-body">
-            <div className="flex justify-between items-center">
-              <h2 className="card-title">Advanced</h2>
+                <ul className="list-disc list-inside space-y-2 mt-4">
+                  {plan.features.map((feature) => (
+                    <li key={feature}>{feature}</li>
+                  ))}
+                </ul>
 
-              <span className="badge badge-primary">Popular</span>
+                <button
+                  className={`btn mt-6 ${
+                    isCurrentPlan ? "btn-primary" : "btn-outline"
+                  }`}
+                >
+                  {isCurrentPlan ? "Current Plan" : "Choose Plan"}
+                </button>
+              </div>
             </div>
-
-            <p className="text-4xl font-bold">$20</p>
-
-            <ul className="space-y-2 mt-4">
-              <li> 50 mails</li>
-              <li> Priority support</li>
-            </ul>
-
-            <button className="btn btn-primary mt-6">Current Plan</button>
-          </div>
-        </div>
-
-        {/* Pro */}
-        <div className="card bg-base-100 shadow-md border border-base-300">
-          <div className="card-body">
-            <h2 className="card-title">Pro</h2>
-
-            <p className="text-4xl font-bold">$50</p>
-
-            <ul className="space-y-2 mt-4">
-              <li> Unlimited mails</li>
-              <li> 24/7 support</li>
-            </ul>
-
-            <button className="btn btn-outline mt-6">Upgrade</button>
-          </div>
-        </div>
+          );
+        })}
       </div>
     </div>
   );

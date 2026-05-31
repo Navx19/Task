@@ -7,7 +7,7 @@ export default function Navbar() {
     <div className="navbar bg-base-100 border-b border-base-300 px-6">
       <div className="flex-1">
         <Link href="/" className="text-2xl font-bold">
-           Public Website 
+          MailBox
         </Link>
       </div>
 
@@ -18,6 +18,10 @@ export default function Navbar() {
 
         <Link href="/contact" className="btn btn-ghost">
           Contact
+        </Link>
+
+        <Link href="/dashboard" className="btn btn-ghost">
+          Dashboard
         </Link>
 
         <Link href="/auth/login" className="btn btn-primary">

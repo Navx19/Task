@@ -10,21 +10,25 @@ export default function SignupPage() {
           <div className="space-y-4 mt-4">
             <input
               type="text"
-              placeholder="Input your name here"
+              placeholder="Full name"
               className="input input-bordered w-full"
             />
 
             <input
               type="email"
-              placeholder="Input your email here"
+              placeholder="Email"
               className="input input-bordered w-full"
             />
             <input
               type="password"
-              placeholder="Input your password here"
+              placeholder="Password"
               className="input input-bordered w-full"
             />
             <button className="btn btn-primary w-full">Create Account</button>
+
+            <a href="/auth/login" className="text-sm text-primary  hover:underline">
+              Already have an account? Login
+            </a>
           </div>
         </div>
       </div>
