@@ -6,14 +6,15 @@ export default async function DashboardLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const user = await getCurrentUser();
-  const initials = user.name
-    .split(" ")
-    .map((part) => part[0])
+  const user = await getCurrentUser(); 
+  const initials = user.name 
+    .split(" ") 
+    .map((part) => part[0]) //first letter of each part of the name
     .join("")
-    .slice(0, 2)
+    .slice(0, 2) 
     .toUpperCase();
 
+  
   return (
     <div className="drawer lg:drawer-open">
       <input id="dashboard-drawer" type="checkbox" className="drawer-toggle" />
@@ -27,7 +28,7 @@ export default async function DashboardLayout({
               htmlFor="dashboard-drawer"
               className="btn btn-square btn-ghost"
             >
-              &#9776;
+              ☰
             </label>
           </div>
 
