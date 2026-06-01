@@ -1,4 +1,15 @@
+"use client";
+
+import { usePathname } from "next/navigation";
+
 export default function Footer() {
+  const pathname = usePathname();
+  const hideFooter = ["/login", "/signup", "/forgot-password"].includes(pathname);
+
+  if (hideFooter) {
+    return null;
+  }
+
   return (
     <footer className="border-t mt-20 bg-base-100">
       <div className="max-w-7xl mx-auto px-6 py-10">

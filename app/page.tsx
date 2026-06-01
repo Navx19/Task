@@ -1,4 +1,5 @@
-// Importing from public/page.tsx component
+import Link from "next/dist/client/link";
+
 export default function Home() {
   return (
     <main>
@@ -10,7 +11,9 @@ export default function Home() {
             <p className="py-6 text-lg">
               Manage mails digitally with a secure and modern dashboard.
             </p>
-            <button className="btn btn-primary btn-lg">Get Started</button>
+            <Link href="/dashboard" className="btn btn-primary btn-lg">
+              Get Started
+            </Link>
           </div>
         </div>
       </section>
